@@ -1,3 +1,4 @@
+import 'package:fitofan_test/style/project_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -26,7 +27,7 @@ class NavItem extends StatelessWidget {
             assetSrc,
             height: 18,
             width: 18,
-            color: const Color(0xffe0e3e7),
+            color: ProjectColors.textPrimaryColor,
           ),
 
           const Gap(8.0),
@@ -35,7 +36,7 @@ class NavItem extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              color: Color(0xffe0e3e7),
+              color: ProjectColors.textPrimaryColor,
               fontWeight: FontWeight.w500,
             ),
           )

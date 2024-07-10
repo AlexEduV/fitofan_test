@@ -1,4 +1,5 @@
 import 'package:fitofan_test/widgets/nav_item.dart';
+import 'package:fitofan_test/widgets/ticker_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -57,19 +58,46 @@ class _HomePageState extends State<HomePage> {
                       NavItem(title: 'Settings', assetSrc: 'assets/images/nav_settings.png'),
 
                     ],
+                  ),
+
+                ],
+              ),
+            ),
+
+            // main section row
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 48.0),
+              child: Row(
+                children: [
+
+                  //'Previous Section'
+                  SizedBox(
+                    width: 280,
+                    child: Column(
+                      children: [
+
+                        //ticker button
+                        TickerButton(
+                          text: 'Previous',
+                          leadingAssetSrc: 'assets/images/back.png',
+                        ),
+
+                        //'previous matches' card
+
+                      ],
+                    ),
+                  ),
+
+                  //'Current' expanded section
+
+                  //'Next' section
+                  SizedBox(
+                    width: 280,
                   )
 
                 ],
               ),
-            )
-
-            // main section row
-
-              //'Previous Section'
-
-              //'Current' section
-
-              //'Next' section
+            ),
 
           ],
         )
