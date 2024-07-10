@@ -1,3 +1,4 @@
+import 'package:fitofan_test/widgets/nav_item.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -38,9 +39,25 @@ class _HomePageState extends State<HomePage> {
                       Image.asset('assets/images/company-name.png'),
 
                     ],
-                  )
+                  ),
 
-                  //navigation pages
+                  //navigation bar
+                  const Wrap(
+                    spacing: 16,
+                    children: [
+                      
+                      NavItem(title: 'Promo', assetSrc: 'assets/images/nav_promo.png',),
+                      
+                      NavItem(title: 'Matches', assetSrc: 'assets/images/nav_matches.png'),
+
+                      NavItem(title: 'Judges', assetSrc: 'assets/images/nav_judges.png'),
+
+                      NavItem(title: 'Screen', assetSrc: 'assets/images/nav_screen.png'),
+
+                      NavItem(title: 'Settings', assetSrc: 'assets/images/nav_settings.png'),
+
+                    ],
+                  )
 
                 ],
               ),
