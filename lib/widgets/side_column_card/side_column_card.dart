@@ -1,5 +1,5 @@
 import 'package:fitofan_test/style/project_colors.dart';
-import 'package:fitofan_test/widgets/side_column_card/participant_row.dart';
+import 'package:fitofan_test/widgets/side_column_card/match_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -49,7 +49,7 @@ class SideColumnCard extends StatelessWidget {
         //list view
         Expanded(
           child: Container(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.only(left: 16.0, top: 16.0, bottom: 16.0),
             decoration: const BoxDecoration(
               border: Border(
                 right: BorderSide(color: ProjectColors.dividerColor),
@@ -60,56 +60,8 @@ class SideColumnCard extends StatelessWidget {
             child: ListView.separated(
               itemCount: 7,
               itemBuilder: (_, int index) {
-                return Container(
-                  decoration: const BoxDecoration(
-                    border: BorderDirectional(
-                      bottom: BorderSide(
-                        color: ProjectColors.dividerColor,
-                      ),
-                    ),
-                    //color: ProjectColors.surfaceBlackColor,
-                  ),
-                  padding: const EdgeInsets.only(bottom: 16.0),
-                  child: IntrinsicHeight(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
 
-                        //item number
-                        Container(
-                          width: 40,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4.0),
-                            color: ProjectColors.dividerColor,
-                          ),
-                          child: Center(
-                            child: Text(
-                              (index + 1).toString(),
-                            ),
-                          ),
-                        ),
-
-                        const Gap(8.0),
-
-                        //participants column with one winner
-                        const Expanded(
-                          child: Column(
-                            children: [
-
-                              ParticipantRow(name: 'Zhou Emma', showTag: true, badgeText: 'Winner', color: ProjectColors.participant1Color),
-
-                              Gap(8.0),
-
-                              ParticipantRow(name: 'Zhou Emma', showTag: false, badgeText: 'Winner', color: ProjectColors.participant2Color),
-
-                            ],
-                          ),
-                        )
-
-                      ],
-                    ),
-                  ),
-                );
+                return MatchTile(index: index);
               },
               separatorBuilder: (_, int index) {
 

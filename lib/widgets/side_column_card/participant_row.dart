@@ -29,16 +29,43 @@ class ParticipantRow extends StatelessWidget {
         children: [
 
           //name
-          Text(
-            name,
-            style: const TextStyle(
-              color: ProjectColors.textPrimaryColor,
+          Expanded(
+            child: Text(
+              name,
+              style: const TextStyle(
+                color: ProjectColors.textPrimaryColor,
+              ),
             ),
           ),
 
           const Gap(10.0),
 
           //winner badge (optional)
+          Visibility(
+            visible: showTag,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(2.0),
+                gradient: const LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Color(0xffea9c0f),
+                    Color(0xffED6B0E),
+                  ],
+                ),
+              ),
+              padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+              child: Text(
+                badgeText,
+                style: const TextStyle(
+                  color: Color(0xff761D11),
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ),
 
         ],
       ),
