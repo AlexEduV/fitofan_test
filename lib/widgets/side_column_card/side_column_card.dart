@@ -70,35 +70,44 @@ class SideColumnCard extends StatelessWidget {
                     //color: ProjectColors.surfaceBlackColor,
                   ),
                   padding: const EdgeInsets.only(bottom: 16.0),
-                  child: Row(
-                    children: [
+                  child: IntrinsicHeight(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
 
-                      //item number
-                      Container(
-                        width: 40,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4.0),
-                          color: ProjectColors.dividerColor,
+                        //item number
+                        Container(
+                          width: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4.0),
+                            color: ProjectColors.dividerColor,
+                          ),
+                          child: Center(
+                            child: Text(
+                              (index + 1).toString(),
+                            ),
+                          ),
                         ),
-                        child: Text(
-                          (index + 1).toString(),
-                        ),
-                      ),
 
-                      const Gap(8.0),
+                        const Gap(8.0),
 
-                      //participants column with one winner
-                      Expanded(
-                        child: const Column(
-                          children: [
+                        //participants column with one winner
+                        const Expanded(
+                          child: Column(
+                            children: [
 
-                            ParticipantRow(name: 'Zhou Emma', showTag: true, badgeText: 'Winner', color: ProjectColors.participant1Color),
+                              ParticipantRow(name: 'Zhou Emma', showTag: true, badgeText: 'Winner', color: ProjectColors.participant1Color),
 
-                          ],
-                        ),
-                      )
+                              Gap(8.0),
 
-                    ],
+                              ParticipantRow(name: 'Zhou Emma', showTag: false, badgeText: 'Winner', color: ProjectColors.participant2Color),
+
+                            ],
+                          ),
+                        )
+
+                      ],
+                    ),
                   ),
                 );
               },
