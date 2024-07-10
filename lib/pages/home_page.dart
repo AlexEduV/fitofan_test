@@ -1,4 +1,5 @@
 import 'package:fitofan_test/widgets/nav_item.dart';
+import 'package:fitofan_test/widgets/side_column_card.dart';
 import 'package:fitofan_test/widgets/ticker_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -70,7 +71,7 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 children: [
 
-                  //'Previous Section'
+                  //'Previous Section' side column
                   SizedBox(
                     width: 280,
                     child: Column(
@@ -82,7 +83,9 @@ class _HomePageState extends State<HomePage> {
                           leadingAssetSrc: 'assets/images/back.png',
                         ),
 
-                        //'previous matches' card
+                        Gap(16.0),
+
+                        SideColumnCard(title: 'Previous'),
 
                       ],
                     ),
