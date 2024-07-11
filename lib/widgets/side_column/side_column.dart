@@ -4,12 +4,26 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class SideColumn extends StatelessWidget {
-  const SideColumn({super.key});
+
+  final String? pagerLeadingAssetSource;
+  final String? pagerTrailingAssetSource;
+  final String pagerText;
+  final String matchesCardTitle;
+  final bool isBottomButtonShown;
+
+  const SideColumn({
+    required this.pagerText,
+    required this.matchesCardTitle,
+    this.pagerLeadingAssetSource,
+    this.pagerTrailingAssetSource,
+    this.isBottomButtonShown = false,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
 
-    return const SizedBox(
+    return SizedBox(
       width: 280,
       height: 742,
       child: Column(
@@ -17,14 +31,18 @@ class SideColumn extends StatelessWidget {
 
           //ticker button
           TickerButton(
-            text: 'Previous',
-            leadingAssetSrc: 'assets/images/back.png',
+            text: pagerText,
+            leadingAssetSrc: pagerLeadingAssetSource,
+            trailingAssetSrc: pagerTrailingAssetSource,
           ),
 
-          Gap(16.0),
+          const Gap(16.0),
 
           Expanded(
-            child: MatchesCard(title: 'Previous'),
+            child: MatchesCard(
+              title: matchesCardTitle,
+              isBottomButtonShown: isBottomButtonShown,
+            ),
           ),
 
         ],

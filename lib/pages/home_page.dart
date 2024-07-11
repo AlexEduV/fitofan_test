@@ -1,5 +1,6 @@
 import 'package:fitofan_test/widgets/nav_item.dart';
 import 'package:fitofan_test/widgets/side_column/matches_card.dart';
+import 'package:fitofan_test/widgets/side_column/side_column.dart';
 import 'package:fitofan_test/widgets/ticker_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -68,43 +69,26 @@ class _HomePageState extends State<HomePage> {
             // main section row
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 48.0),
-              child: Row(
+              child: Wrap(
+                spacing: 16,
                 children: [
 
                   //'Previous' side column
-                  SizedBox(
-                    width: 280,
-                    height: 742,
-                    child: Column(
-                      children: [
-
-                        //ticker button
-                        TickerButton(
-                          text: 'Previous',
-                          leadingAssetSrc: 'assets/images/back.png',
-                        ),
-
-                        Gap(16.0),
-
-                        Expanded(
-                          child: MatchesCard(
-                            title: 'Previous',
-                            isBottomButtonShown: true,
-                          ),
-                        ),
-
-                      ],
-                    ),
+                  SideColumn(
+                    pagerText: 'Previous',
+                    matchesCardTitle: 'Previous',
+                    pagerLeadingAssetSource: 'assets/images/back.png',
+                    isBottomButtonShown: true,
                   ),
 
                   //'Current' expanded section
 
                   //'Next' side column
-                  SizedBox(
-                    width: 280,
-                    height: 742,
-                    child: Column(),
-                  )
+                  SideColumn(
+                    pagerText: 'Next',
+                    matchesCardTitle: 'Next',
+                    pagerTrailingAssetSource: 'assets/images/forward.png',
+                  ),
 
                 ],
               ),
