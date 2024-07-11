@@ -12,5 +12,6 @@ class ProjectColors {
   static const participant1Color = Color(0xff123897);
   static const participant2Color = Color(0xffA80F2A);
 
+  static const surfaceWhiteColor = Color(0xffffffff);
 
 }

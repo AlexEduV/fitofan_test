@@ -1,5 +1,5 @@
 import 'package:fitofan_test/widgets/nav_item.dart';
-import 'package:fitofan_test/widgets/side_column/side_column_card.dart';
+import 'package:fitofan_test/widgets/side_column/matches_card.dart';
 import 'package:fitofan_test/widgets/ticker_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -87,7 +87,10 @@ class _HomePageState extends State<HomePage> {
                         Gap(16.0),
 
                         Expanded(
-                          child: SideColumnCard(title: 'Previous'),
+                          child: MatchesCard(
+                            title: 'Previous',
+                            isBottomButtonShown: true,
+                          ),
                         ),
 
                       ],

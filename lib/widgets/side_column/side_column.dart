@@ -1,4 +1,4 @@
-import 'package:fitofan_test/widgets/side_column/side_column_card.dart';
+import 'package:fitofan_test/widgets/side_column/matches_card.dart';
 import 'package:fitofan_test/widgets/ticker_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -8,6 +8,7 @@ class SideColumn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return const SizedBox(
       width: 280,
       height: 742,
@@ -23,7 +24,7 @@ class SideColumn extends StatelessWidget {
           Gap(16.0),
 
           Expanded(
-            child: SideColumnCard(title: 'Previous'),
+            child: MatchesCard(title: 'Previous'),
           ),
 
         ],

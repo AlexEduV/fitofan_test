@@ -4,11 +4,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class SideColumnCard extends StatelessWidget {
+class MatchesCard extends StatelessWidget {
   final String title;
+  final bool isBottomButtonShown;
 
-  const SideColumnCard({
+  const MatchesCard({
     required this.title,
+    this.isBottomButtonShown = false,
     super.key,
   });
 
@@ -18,7 +20,7 @@ class SideColumnCard extends StatelessWidget {
     return Column(
       children: [
 
-        // card title
+        // headline
         Container(
           width: double.maxFinite,
           decoration: const BoxDecoration(
@@ -49,13 +51,17 @@ class SideColumnCard extends StatelessWidget {
         //list view
         Expanded(
           child: Container(
-            padding: const EdgeInsets.only(left: 16.0, top: 16.0, bottom: 16.0),
-            decoration: const BoxDecoration(
-              border: Border(
+            padding: const EdgeInsets.only(left: 16.0, top: 16.0),
+            decoration: BoxDecoration(
+              border: const Border(
                 right: BorderSide(color: ProjectColors.dividerColor),
                 left: BorderSide(color: ProjectColors.dividerColor),
               ),
               color: ProjectColors.surfaceBlackColor,
+              borderRadius: !isBottomButtonShown ? const BorderRadius.only(
+                bottomRight: Radius.circular(16.0),
+                bottomLeft: Radius.circular(16.0),
+              ) : null,
             ),
             child: ListView.separated(
               itemCount: 7,
@@ -69,9 +75,38 @@ class SideColumnCard extends StatelessWidget {
               },
             ),
           ),
-        )
+        ),
 
         //'show on tv' button
+        Visibility(
+          visible: isBottomButtonShown,
+          child: Container(
+            width: double.maxFinite,
+            padding: const EdgeInsets.all(16.0),
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(16.0),
+                bottomRight: Radius.circular(16.0),
+              ),
+              color: ProjectColors.dividerColor,
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4.0),
+                color: ProjectColors.buttonActiveColor,
+              ),
+              padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 14.0),
+              alignment: Alignment.center,
+              child: const Text(
+                'Show on TV',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: ProjectColors.surfaceWhiteColor,
+                ),
+              ),
+            ),
+          ),
+        ),
 
       ],
     );
