@@ -158,15 +158,28 @@ class _HomePageState extends State<HomePage> {
                                     Color(0xff163692)
                                   ],
                                   name: 'Shirin Shirinov',
-                                  assetSrc: '',
+                                  assetSrc: 'assets/images/participant_avatar_1.jpeg',
                                   combatName: 'Kombat',
                                   coachName: 'Coach',
-                              )
+                              ),
+
+                              Gap(16.0),
+
+                              ParticipantCard(
+                                gradientColors: [
+                                  Color(0xff460e1a),
+                                  Color(0xffa20f29)
+                                ],
+                                name: 'Shirin Shirinov',
+                                assetSrc: 'assets/images/participant_avatar_2.jpeg',
+                                combatName: 'Kombat',
+                                coachName: 'Coach',
+                              ),
 
                             ],
                           ),
 
-                        )
+                        ),
 
 
 

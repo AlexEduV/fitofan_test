@@ -39,7 +39,10 @@ class ParticipantCard extends StatelessWidget {
             height: 173,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(4.0),
-              color: Colors.grey,
+              image: DecorationImage(
+                image: AssetImage(assetSrc),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
 
