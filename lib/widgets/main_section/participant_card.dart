@@ -121,10 +121,16 @@ class ParticipantCard extends StatelessWidget {
                 height: 40,
                 width: 40,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4.0),
-
+                  borderRadius: BorderRadius.circular(5.0),
+                  color: Colors.white.withOpacity(0.1),
                 ),
-              )
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(
+                  'assets/images/more.png',
+                  height: 24,
+                  width: 24,
+                ),
+              ),
 
             ],
           )
