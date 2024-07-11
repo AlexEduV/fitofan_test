@@ -1,3 +1,4 @@
+import 'package:fitofan_test/style/project_colors.dart';
 import 'package:fitofan_test/widgets/nav_item.dart';
 import 'package:fitofan_test/widgets/side_column/matches_card.dart';
 import 'package:fitofan_test/widgets/side_column/side_column.dart';
@@ -67,24 +68,47 @@ class _HomePageState extends State<HomePage> {
             ),
 
             // main section row
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 48.0),
-              child: Wrap(
-                spacing: 16,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 48.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
 
                   //'Previous' side column
-                  SideColumn(
+                  const SideColumn(
                     pagerText: 'Previous',
                     matchesCardTitle: 'Previous',
                     pagerLeadingAssetSource: 'assets/images/back.png',
                     isBottomButtonShown: true,
                   ),
 
-                  //'Current' expanded section
+                  const Gap(16.0),
+
+                  //Central column
+                  Expanded(
+                    child: Column(
+                      children: [
+
+                        //title
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16.0),
+                            border: Border.all(
+                              color: ProjectColors.dividerColor,
+                            ),
+                            color: ProjectColors.surfaceBlackColor,
+                          ),
+                          padding: const EdgeInsets.all(16.0),
+                        )
+
+                      ],
+                    ),
+                  ),
+
+                  const Gap(16.0),
 
                   //'Next' side column
-                  SideColumn(
+                  const SideColumn(
                     pagerText: 'Next',
                     matchesCardTitle: 'Next',
                     pagerTrailingAssetSource: 'assets/images/forward.png',
