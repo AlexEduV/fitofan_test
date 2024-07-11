@@ -1,4 +1,5 @@
 import 'package:fitofan_test/style/project_colors.dart';
+import 'package:fitofan_test/widgets/main_section/participant_card.dart';
 import 'package:fitofan_test/widgets/nav_item.dart';
 import 'package:fitofan_test/widgets/side_column/side_column.dart';
 import 'package:flutter/material.dart';
@@ -48,15 +49,15 @@ class _HomePageState extends State<HomePage> {
                     spacing: 16,
                     children: [
                       
-                      NavItem(title: 'Promo', assetSrc: 'assets/images/nav_promo.png',),
+                      NavItem(title: 'Promo', assetSrc: 'assets/images/navigation/nav_promo.png',),
                       
-                      NavItem(title: 'Matches', assetSrc: 'assets/images/nav_matches.png'),
+                      NavItem(title: 'Matches', assetSrc: 'assets/images/navigation/nav_matches.png'),
 
-                      NavItem(title: 'Judges', assetSrc: 'assets/images/nav_judges.png'),
+                      NavItem(title: 'Judges', assetSrc: 'assets/images/navigation/nav_judges.png'),
 
-                      NavItem(title: 'Screen', assetSrc: 'assets/images/nav_screen.png'),
+                      NavItem(title: 'Screen', assetSrc: 'assets/images/navigation/nav_screen.png'),
 
-                      NavItem(title: 'Settings', assetSrc: 'assets/images/nav_settings.png'),
+                      NavItem(title: 'Settings', assetSrc: 'assets/images/navigation/nav_settings.png'),
 
                     ],
                   ),
@@ -136,6 +137,36 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                         ),
+
+                        const Gap(16.0),
+
+                        //main section
+                        Container(
+                          height: 650,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16.0),
+                            border: Border.all(color: ProjectColors.dividerColor),
+                            color: ProjectColors.surfaceBlackColor,
+                          ),
+                          padding: const EdgeInsets.all(16.0),
+                          child: const Column(
+                            children: [
+
+                              ParticipantCard(
+                                  gradientColors: [
+                                    Color(0xff0c2052),
+                                    Color(0xff163692)
+                                  ],
+                                  name: 'Shirin Shirinov',
+                                  assetSrc: '',
+                                  combatName: 'Kombat',
+                                  coachName: 'Coach',
+                              )
+
+                            ],
+                          ),
+
+                        )
 
 
 
