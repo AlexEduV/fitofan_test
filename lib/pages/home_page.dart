@@ -114,6 +114,7 @@ class _HomePageState extends State<HomePage> {
                                     fontSize: 24,
                                     color: ProjectColors.textPrimaryColor,
                                     fontWeight: FontWeight.w500,
+                                    height: 1.1
                                   ),
                                 ),
                               ),
@@ -127,6 +128,7 @@ class _HomePageState extends State<HomePage> {
                                   color: ProjectColors.textSecondaryDarkColor,
                                   fontSize: 24,
                                   fontWeight: FontWeight.w500,
+                                  height: 1.1,
                                 ),
                               ),
 
