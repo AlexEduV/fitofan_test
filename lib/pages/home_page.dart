@@ -1,8 +1,6 @@
 import 'package:fitofan_test/style/project_colors.dart';
 import 'package:fitofan_test/widgets/nav_item.dart';
-import 'package:fitofan_test/widgets/side_column/matches_card.dart';
 import 'package:fitofan_test/widgets/side_column/side_column.dart';
-import 'package:fitofan_test/widgets/ticker_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -99,7 +97,45 @@ class _HomePageState extends State<HomePage> {
                             color: ProjectColors.surfaceBlackColor,
                           ),
                           padding: const EdgeInsets.all(16.0),
-                        )
+                          child: Row(
+                            children: [
+
+                              //badge
+                              Container(
+                                width: 48,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  color: ProjectColors.dividerColor,
+                                ),
+                                padding: const EdgeInsets.all(8.0),
+                                child: const Text(
+                                  '#5',
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    color: ProjectColors.textPrimaryColor,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+
+                              const Gap(16.0),
+
+                              //title text
+                              const Text(
+                                'Day 1, Dojang 1, №1 All. Poomsae',
+                                style: TextStyle(
+                                  color: ProjectColors.textSecondaryDarkColor,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+
+
+                            ],
+                          ),
+                        ),
+
+
 
                       ],
                     ),
