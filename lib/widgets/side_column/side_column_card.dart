@@ -1,5 +1,5 @@
 import 'package:fitofan_test/style/project_colors.dart';
-import 'package:fitofan_test/widgets/side_column_card/match_tile.dart';
+import 'package:fitofan_test/widgets/side_column/match_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -39,7 +39,7 @@ class SideColumnCard extends StatelessWidget {
             title,
             style: const TextStyle(
               color: ProjectColors.textSecondaryDarkColor,
-              fontSize: 20,
+              fontSize: 16,
               fontWeight: FontWeight.w500,
             ),
           ),

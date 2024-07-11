@@ -1,5 +1,5 @@
 import 'package:fitofan_test/widgets/nav_item.dart';
-import 'package:fitofan_test/widgets/side_column_card/side_column_card.dart';
+import 'package:fitofan_test/widgets/side_column/side_column_card.dart';
 import 'package:fitofan_test/widgets/ticker_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
               child: Row(
                 children: [
 
-                  //'Previous Section' side column
+                  //'Previous' side column
                   SizedBox(
                     width: 280,
                     height: 742,
@@ -96,9 +96,11 @@ class _HomePageState extends State<HomePage> {
 
                   //'Current' expanded section
 
-                  //'Next' section
+                  //'Next' side column
                   SizedBox(
                     width: 280,
+                    height: 742,
+                    child: Column(),
                   )
 
                 ],

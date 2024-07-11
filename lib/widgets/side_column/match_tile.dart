@@ -1,5 +1,5 @@
 import 'package:fitofan_test/style/project_colors.dart';
-import 'package:fitofan_test/widgets/side_column_card/participant_row.dart';
+import 'package:fitofan_test/widgets/side_column/participant_row.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -42,7 +42,7 @@ class MatchTile extends StatelessWidget {
               ),
             ),
 
-            const Gap(8.0),
+            const Gap(4.0),
 
             //participants column with one winner
             const Expanded(
@@ -56,7 +56,7 @@ class MatchTile extends StatelessWidget {
                     color: ProjectColors.participant1Color,
                   ),
 
-                  Gap(8.0),
+                  Gap(4.0),
 
                   ParticipantRow(
                     name: 'Zhou Emma',
