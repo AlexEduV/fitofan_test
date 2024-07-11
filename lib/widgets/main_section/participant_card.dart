@@ -46,43 +46,89 @@ class ParticipantCard extends StatelessWidget {
           const Gap(16.0),
 
           //info column
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+
+                //name (2 lines)
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        name,
+                        style: const TextStyle(
+                          fontSize: 48,
+                          fontWeight: FontWeight.w500,
+                          height: 1.2,
+                          color: ProjectColors.surfaceWhiteColor,
+                        ),
+                        maxLines: 2,
+                      ),
+                    ),
+                  ],
+                ),
+
+                const Gap(8.0),
+
+                //combat
+                Wrap(
+                  spacing: 4,
+                  direction: Axis.vertical,
+                  children: [
+
+                    //combat
+                    Text('Combat: $combatName'),
+
+                    //coach
+                    Text('Coach: $coachName'),
+                  ],
+                ),
+
+              ],
+            ),
+          ),
+
+          const Gap(16.0),
+
+          //actions row
+          Wrap(
+            spacing: 8,
             children: [
 
-              //name (2 lines)
-              Text(
-                name,
-                style: const TextStyle(
-                  fontSize: 48,
-                  fontWeight: FontWeight.w500,
-                  height: 1.2,
-                  color: ProjectColors.surfaceWhiteColor,
+              //penalty secondary button
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4.0),
+                  border: Border.all(color: ProjectColors.textPrimaryColor),
+                  color: Colors.transparent,
                 ),
-                maxLines: 2,
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 24),
+                child: const Text(
+                  'Penalty',
+                  style: TextStyle(
+                    height: 1.1,
+                    fontWeight: FontWeight.w500,
+                    color: ProjectColors.textPrimaryColor,
+                  ),
+                ),
               ),
 
               const Gap(8.0),
 
-              //combat
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+              //more button
+              Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4.0),
 
-                  //combat
-                  Text('Combat: $combatName'),
-
-                  const Gap(4.0),
-
-                  //coach
-                  Text('Coach: $coachName'),
-                ],
-              ),
+                ),
+              )
 
             ],
           )
 
-          //actions row
         ],
       ),
     );
